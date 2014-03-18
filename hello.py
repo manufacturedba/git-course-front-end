@@ -1,5 +1,6 @@
 import os
 from flask import Flask
+from github import Github
 
 app = Flask(__name__)
 

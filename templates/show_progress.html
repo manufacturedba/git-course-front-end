@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>{{task}}</h1>
+
+<h4> Class Real </h4>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress.real }}" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    {{ progress.real }}%
+  </div>
+</div>
+
+<h4> Expected </h4>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress.expected }}" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    {{ progress.expected }}%
+  </div>
+</div>
+{% endblock %}

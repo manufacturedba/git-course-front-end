@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>Hello</h1>
+
+{% for user in users %}
+<h3>Hello {{user.username}}!</h3>
+{% endfor %}
+
+{% endblock %}

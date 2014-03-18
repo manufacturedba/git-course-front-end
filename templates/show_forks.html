@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>{{task}}</h1>
+
+<ul style="font-size:20px">
+{% for user in users %}
+<li>{{user.username}} with fork: {{user.fork}}</li>
+{% endfor %}
+</ul>
+{% endblock %}
