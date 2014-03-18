@@ -52,7 +52,10 @@ def get_branch_count():
     count = 0
     user_count = 0
     for user in c:
-        branch = user['branches']
+        try:
+            branch = user['branches']
+        except:
+            branch = 0
         count = count + branch
         user_count = user_count + 1
     all_users = user_count * expected_branches
