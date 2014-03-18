@@ -5,6 +5,9 @@ import pymongo
 import requests
 import json
 
+'''
+mongoimport -h localhost --port 27017 -d git -c users --drop --jsonArray --stopOnError --file users.json
+'''
 g = Github(USERNAME, PASSWORD)
 user_list_count = 17.0
 expected_list_count = 14.0
@@ -35,7 +38,7 @@ def save_forks():
 def check_fork_count():
     expected_count = repo.forks_count / expected_list_count
     user_count = repo.forks_count / user_list_count
-    return {"expected":expected_count * 100, "real":user_count * 100}
+    return {"expected":expected_count * 100.0, "real":user_count * 100.0}
     
 ''' TASK THREE '''
 def save_branch_count():
@@ -53,4 +56,4 @@ def get_branch_count():
         count = count + branch
         user_count = user_count + 1
     all_users = user_count * expected_branches
-    return count / all_users
+    return 100.0 * (count / all_users)

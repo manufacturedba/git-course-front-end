@@ -45,13 +45,13 @@ def task_two_verify():
     
 @app.route('/three')
 def task_three():
-    count = get_branch_count()
-    return render_template('show_progress.html', task="Checking Branches", progress=count)
+    count = hub.get_branch_count()
+    return render_template('show_branch_progress.html', task="Checking Branches", progress=count)
     
 @app.route('/three/verify')
 def task_three_verify():
     count = hub.save_branches()
-    return ""
+    return "Success"
     
 if __name__ == '__main__':
     app.run()

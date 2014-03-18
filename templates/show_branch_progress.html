@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1>{{task}}</h1>
+
+<h4> Branches Created </h4>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+    {{ progress }}%
+  </div>
+</div>
+
+{% endblock %}
